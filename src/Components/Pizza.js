@@ -5,12 +5,14 @@ function Pizza() {
 	return (
 		<>
 			<Field
-				name="slices"
+				required
+				name="no_of_slices"
 				component="input"
 				type="number"
 				placeholder="Number of slices"
 			/>
 			<Field
+				required
 				name="diameter"
 				component="input"
 				type="number"

@@ -4,7 +4,8 @@ import { Field } from "redux-form";
 function Sandwich() {
 	return (
 		<Field
-			name="slices"
+			required
+			name="slices_of_bread"
 			component="input"
 			type="number"
 			placeholder="Slices of Bread"

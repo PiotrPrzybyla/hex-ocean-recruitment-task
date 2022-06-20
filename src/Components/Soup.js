@@ -4,7 +4,8 @@ import { Field } from "redux-form";
 function Soup() {
 	return (
 		<Field
-			name="spiciness"
+			required
+			name="spiciness_scale"
 			component="input"
 			type="number"
 			min={0}
