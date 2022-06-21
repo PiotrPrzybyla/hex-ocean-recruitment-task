@@ -3,12 +3,8 @@ import Type from "./Type";
 import { reduxForm, Field, FormSection } from "redux-form";
 import { sendToAPI } from "../functions/fetch";
 import ReduxFormSelect from "./ReduxFormSelect";
+import "./Form.css";
 function Form(props) {
-	const [chosenType, setChosenType] = useState(null);
-	function chooseType(e) {
-		e.preventDefault();
-		setChosenType(e.target.value);
-	}
 	const options = [
 		{
 			label: "Pizza",

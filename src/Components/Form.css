@@ -1,0 +1,6 @@
+form {
+	width: clamp(250px, 30%, 400px);
+	margin: 60px auto;
+	display: grid;
+	gap: 10px;
+}
