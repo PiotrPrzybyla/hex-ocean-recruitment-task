@@ -9,12 +9,8 @@ This app is created by package "create-react-app". It contains simple form to PO
 App is created by create-react-app, so to open, run command
 
 ```
-npm start
-```
-
-or
-
-```
+npm install --global yarn
+yarn
 yarn start
 ```
 
