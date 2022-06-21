@@ -6,6 +6,7 @@ input {
 	background-color: #555;
 	color: #efefef;
 	font-size: 20px;
+	padding: 5px;
 }
 
 button {
@@ -17,6 +18,10 @@ button {
 	font-size: 25px;
 	text-transform: uppercase;
 	margin: auto;
+}
+label {
+	margin: 0 5px;
+	font-size: 20px;
 }
 button:hover {
 	cursor: pointer;

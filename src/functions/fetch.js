@@ -29,4 +29,5 @@ export async function sendToAPI(data) {
 	);
 	const json = await resp.json();
 	console.log(json);
+	return json;
 }
