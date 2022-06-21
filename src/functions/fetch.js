@@ -28,7 +28,9 @@ export async function sendToAPI(data) {
 		"https://frosty-wood-6558.getsandbox.com:443/dishes",
 		config
 	);
+	console.log(resp);
 	const json = await resp.json();
+	const status = await resp.status;
 	console.log(json);
-	return json;
+	return [json, status];
 }

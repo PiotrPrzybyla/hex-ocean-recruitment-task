@@ -7,22 +7,23 @@ import { options } from "../functions/SelectForm";
 import "./Form.css";
 function Form(props) {
 	const [dish, setDish] = useState(null);
+	const [status, setStatus] = useState(null);
 	function handleSubmit(data) {
 		const APIPromise = sendToAPI(data);
+		// setDish(APIPromise.json());
 		APIPromise.then((json) => {
-			console.log(json);
-			setDish(json);
+			setStatus(json[1]);
+			setDish(json[0]);
 		});
 	}
 	function backToForm() {
 		setDish(null);
 		window.location.reload(true);
 	}
-
 	if (dish)
 		return (
 			<section className="result">
-				<Result dish={dish}></Result>
+				<Result dish={dish} status={status}></Result>
 				<button onClick={backToForm}>Back</button>
 			</section>
 		);

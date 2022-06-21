@@ -4,16 +4,32 @@ function Result(props) {
 	const dish = props.dish;
 	return (
 		<>
-			<div>
-				<p>Name: {dish.name}</p>
-			</div>
-			<div>
-				<p>Preparation Time: {dish.preparation_time}</p>
-			</div>
-			<div>
-				<p>Type: {dish.type}</p>
-			</div>
-			{dish.no_of_slices == undefined ? (
+			{props.status === 200 ? <></> : <h1>Error {props.status}</h1>}
+			{dish.name === undefined ? (
+				<></>
+			) : (
+				<div>
+					<p>Name: {dish.name}</p>
+				</div>
+			)}
+
+			{dish.preparation_time === undefined ? (
+				<></>
+			) : (
+				<div>
+					<p>Preparation Time: {dish.preparation_time}</p>
+				</div>
+			)}
+
+			{dish.type === undefined ? (
+				<></>
+			) : (
+				<div>
+					<p>Type: {dish.type}</p>
+				</div>
+			)}
+
+			{dish.no_of_slices === undefined ? (
 				<></>
 			) : (
 				<div>
@@ -21,7 +37,7 @@ function Result(props) {
 				</div>
 			)}
 
-			{dish.diameter == undefined ? (
+			{dish.diameter === undefined ? (
 				<></>
 			) : (
 				<div>
@@ -29,7 +45,7 @@ function Result(props) {
 				</div>
 			)}
 
-			{dish.spiciness_scale == undefined ? (
+			{dish.spiciness_scale === undefined ? (
 				<></>
 			) : (
 				<div>
@@ -37,7 +53,7 @@ function Result(props) {
 				</div>
 			)}
 
-			{dish.slices_of_bread == undefined ? (
+			{dish.slices_of_bread === undefined ? (
 				<></>
 			) : (
 				<div>
