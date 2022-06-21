@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Select from "react-select";
 import Type from "./Type";
-import { customStyles } from "../functions/customStyles";
+import { customStyles } from "../functions/SelectForm";
 
 function ReduxFormSelect(props) {
 	const { input, options } = props;

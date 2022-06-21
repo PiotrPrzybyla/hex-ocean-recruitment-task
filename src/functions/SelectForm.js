@@ -23,3 +23,17 @@ export const customStyles = {
 		return { ...provided, opacity, transition, color: "#efefef" };
 	},
 };
+export const options = [
+	{
+		label: "Pizza",
+		value: "pizza",
+	},
+	{
+		label: "Soup",
+		value: "soup",
+	},
+	{
+		label: "Sandwich",
+		value: "sandwich",
+	},
+];

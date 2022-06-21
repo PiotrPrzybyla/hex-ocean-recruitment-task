@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import Type from "./Type";
 import Result from "./Result";
 import { reduxForm, Field, FormSection } from "redux-form";
 import { sendToAPI } from "../functions/fetch";
 import ReduxFormSelect from "./ReduxFormSelect";
+import { options } from "../functions/SelectForm";
 import "./Form.css";
-import "./Result.css";
 function Form(props) {
 	const [dish, setDish] = useState(null);
 	function handleSubmit(data) {
@@ -19,20 +18,7 @@ function Form(props) {
 		setDish(null);
 		window.location.reload(true);
 	}
-	const options = [
-		{
-			label: "Pizza",
-			value: "pizza",
-		},
-		{
-			label: "Soup",
-			value: "soup",
-		},
-		{
-			label: "Sandwich",
-			value: "sandwich",
-		},
-	];
+
 	if (dish)
 		return (
 			<section className="result">

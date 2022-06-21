@@ -1,3 +1,4 @@
+import { reset } from "redux-form";
 export async function sendToAPI(data) {
 	const details = data.details;
 	const dataToSend = {
