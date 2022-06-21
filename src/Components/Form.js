@@ -1,14 +1,23 @@
 import React, { useState } from "react";
 import Type from "./Type";
+import Result from "./Result";
 import { reduxForm, Field, FormSection } from "redux-form";
 import { sendToAPI } from "../functions/fetch";
 import ReduxFormSelect from "./ReduxFormSelect";
 import "./Form.css";
+import "./Result.css";
 function Form(props) {
-	const [isFetched, setIsFetched] = useState(false);
+	const [dish, setDish] = useState(null);
 	function handleSubmit(data) {
-		sendToAPI(data);
-		setIsFetched(true);
+		const APIPromise = sendToAPI(data);
+		APIPromise.then((json) => {
+			console.log(json);
+			setDish(json);
+		});
+	}
+	function backToForm() {
+		setDish(null);
+		window.location.reload(true);
 	}
 	const options = [
 		{
@@ -24,7 +33,13 @@ function Form(props) {
 			value: "sandwich",
 		},
 	];
-	if (isFetched) return <div></div>;
+	if (dish)
+		return (
+			<section className="result">
+				<Result dish={dish}></Result>
+				<button onClick={backToForm}>Back</button>
+			</section>
+		);
 	else
 		return (
 			<form onSubmit={props.handleSubmit(handleSubmit)}>
